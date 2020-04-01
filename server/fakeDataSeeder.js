@@ -91,7 +91,7 @@ for (let i = 0; i < numberOfHouses; i += 1) {
   }
 }
 for (let i = 0; i < numberOfHouses; i += 1) {
-  valueHistory.date[i].sort(-1);
+  valueHistory.date[i].sort((a, b) => (b - a));
   addresses.currentEstimatedValue.push(valueHistory.homeValue[numberOfValuesPerHouse - 1][i]);
   addresses.addressesTableData += `"\\N"\t${addresses.address[i]}\t${addresses.zipCode[i]}\t${addresses.on_market[i]}\t${addresses.sqft[i]}\t${addresses.bed[i]}\t${addresses.bath[i]}\t${addresses.currentEstimatedValue[i]}\t${addresses.picture[i]}\n`;
   for (let j = 0; j < numberOfValuesPerHouse; j += 1) {
@@ -99,5 +99,11 @@ for (let i = 0; i < numberOfHouses; i += 1) {
   }
 }
 
-fs.writeFile('addressTableData.txt', addresses.addressesTableData, 'utf8');
-fs.writeFile('estimatedValueHistoryTableData.txt', valueHistory.estimatedValueHistoryTableData, 'utf8');
+fs.writeFile('addressTableData.txt', addresses.addressesTableData, function (err) {
+  if (err) throw err;
+  console.log('addressTableData Saved!');
+});
+fs.writeFile('estimatedValueHistoryTableData.txt', valueHistory.estimatedValueHistoryTableData, function (err) {
+  if (err) throw err;
+  console.log('estimatedValueHistoryTableData Saved!');
+});

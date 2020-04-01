@@ -1,56 +1,74 @@
-# Abode
-- [Product page](http://3.135.19.247/)
-- Module: Home Value:
-- Usage: This module is used to replicate Zillow's Home Value feature.
-- Instruction: follow the instructions in the Table of Contents in sequential order.
+# Abode Property value/cost System Design
 
+# Related Projects
+- https://github.com/MKS-Inc/service-similarhomes
+- https://github.com/MKS-Inc/service-neighborhood
 
-# Table of Contents
-- Development requirements
-- Environment set up
-- Data creation and seeding
-- Build the bundle file
-- Server set up
-- Accessing the service
+# API Documentation
 
-## Requirements
-- Node 6.13.0
+## get home value summary
+- GET `/homes/:id/homeValueSummary`
+- Url Params: `id = [integer]`
+- Response
+  - Status : `200 OK`
+  - Content example:
+  ```
+  {
+    'addressSummary': {
+      id: 1,
+      address: '565 Herzog Extension Kling Crescent, Schummborough, New Jersey, 11400-0653',
+      zipcode: 11400,
+      on_market: 'false',
+      sqft: 5090,
+      bed: 0,
+      bath: 10,
+      currentestimatedvalue: 1434446,
+      pictureurl: 'https://abodeproject.s3.us-east-2.amazonaws.com/address1.jpg'
+    },
+    'addressValues': [value1, value2, value3...],
+    'similarAddresses': [addresse1, addresse2, addresse3...]
+  }
+  ```
+- Sample Call:
+  `axios.get('/homes/1/homeValueSummary');`
 
-## Environment set up
-Run this command in the CLI (in this module's root directorate):
-- npm install
+## Add new home value summary
+- POST `/homes/:id/newValue`
+- Url Params: `id = [integer]`
+- Data Params: homeValueSummary object
+- Response
+  - Status : `200 OK`
+  - Content: `{success: 'Post new home values successfully!'}`
+- Sample Call:
+  `axios.post('/homes/109/newValue');`
 
-## Data creation
-1. To clear data && set schema, make sure your mysql server is running, then run this command in your CLI (in this module's root directorate):
-- mysql -u root < server/schema.sql
+## Update home value summary
+- PUT `/homes/:id`
+- Url Params: `id = [integer]`
+- Data Params: homeValueSummary object
+- Response
+  - Status : 200 OK
+  - Content: `{success: 'Update home values successfully!'}`
+- Sample Call:
+  `axios.put('/homes/7');`
 
-2. To seed your data, run this command in your CLI (in this module's root directorate) and 2 txt files (addressTableData.txt and estimatedValueHistoryTableData.txt) will be created in your root directorate:
-- node server/fakeDataSeeder.js
+## Delete home value summary
+- DELETE `/homes/:id`
+- Url Params: `id = [integer]`
+- Response
+  - Status : 200 OK
+  - Content: `{success: 'Delete new home values successfully!'}`
+- Sample Call:
+  `axios.delete('/homes/3');`
 
-3. Create a new folder, called fakeData in this module's root directorate
-
-4. Move your txt files from the root directorate into the fakeData folder
-
-5. To load data for addresses table in mysql, run these commands in your mysql server (in this module's root directorate):
-- USE homevalue_pricetax;
-- LOAD DATA LOCAL INFILE './fakeData/addressTableData.txt' INTO TABLE addresses;
-
-6. To load data for estimated_value_history table in mysql, run these commands in your mysql server (in this module's root directorate):
-- USE homevalue_pricetax;
-- LOAD DATA LOCAL INFILE './fakeData/estimatedValueHistoryTableData.txt' INTO TABLE estimated_value_history;
-
-## Build the bundle file
-Run this command in the CLI (in this module's root directorate):
-- npm run build
-
-## Server set up
-NOTE: This server will run on port 3333 of your local host
+# Server set up
+NOTE: This server will run on port 3006 of your local host
 
 NOTE: you might have to change the option in the db.js file (inside the server folder) to have the correct log in to your mysql server
 
 Run this command in the CLI (in this module's root directorate):
 - npm start
 
-## Accessing the service
+# Accessing the service
 Go to your browser (preferrably Google Chrome) and type in:
-- http://localhost:3333
+- http://localhost:3006

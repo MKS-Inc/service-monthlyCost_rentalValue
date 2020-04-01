@@ -6,7 +6,7 @@ const { model } = require('./model');
 
 const app = express();
 
-const port = 3333;
+const port = 3006;
 
 app.use(morgan('dev'));
 
@@ -22,6 +22,7 @@ app.get('/exampleHomeSummary/', (req, res) => {
     if (error) {
       res.end();
     } else {
+      console.log(result);
       res.send(result);
     }
   });

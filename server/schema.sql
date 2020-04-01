@@ -27,22 +27,22 @@ CREATE TABLE estimated_value_history (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE price_history (
-  id INT(10) AUTO_INCREMENT,
-  address_id INT(10),
-  event VARCHAR(25),
-  price INT(15),
-  source VARCHAR(25),
-  PRIMARY KEY (id)
-);
+-- CREATE TABLE price_history (
+--   id INT(10) AUTO_INCREMENT,
+--   address_id INT(10),
+--   event VARCHAR(25),
+--   price INT(15),
+--   source VARCHAR(25),
+--   PRIMARY KEY (id)
+-- );
 
-CREATE TABLE tax_history (
-  id INT(10) AUTO_INCREMENT,
-  address_id INT(10),
-  property_tax INT(15),
-  tax_assessment INT(15),
-  PRIMARY KEY (id)
-);
+-- CREATE TABLE tax_history (
+--   id INT(10) AUTO_INCREMENT,
+--   address_id INT(10),
+--   property_tax INT(15),
+--   tax_assessment INT(15),
+--   PRIMARY KEY (id)
+-- );
 
 -- to clear data && set schema in CLI:
 -- mysql -u root < server/schema.sql
