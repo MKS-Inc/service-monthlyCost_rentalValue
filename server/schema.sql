@@ -1,31 +1,30 @@
-DROP DATABASE IF EXISTS homevalue_pricetax;
+-- DROP DATABASE IF EXISTS homevalues;
 
-CREATE DATABASE homevalue_pricetax;
+-- CREATE DATABASE homevalues;
 
-USE homevalue_pricetax;
-
-CREATE TABLE addresses (
-  id INT(10) AUTO_INCREMENT,
-  address VARCHAR(100),
-  zipcode INT(5),
-  on_market VARCHAR(5),
-  sqft INT(4),
-  bed INT(2),
-  bath INT(2),
-  currentestimatedvalue INT(15),
-  pictureurl VARCHAR(100),
+CREATE TABLE homes (
+  id INT,
+  address TEXT,
+  zipCode INT,
+  onMarket BOOLEAN,
+  sqft INT,
+  bedCount INT,
+  bathCount INT,
+  currentValue INT,
+  pictureUrl TEXT,
   PRIMARY KEY (id)
 );
+ 
+COPY homes (id, address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl) 
+FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/homes.csv' DELIMITER',' CSV HEADER;
 
-CREATE TABLE estimated_value_history (
-  id INT(10) AUTO_INCREMENT,
-  address VARCHAR(100),
-  date DATE,
-  estimated_home_value INT(15),
-  estimated_area_value INT(15),
-  estimated_city_value INT(15),
-  PRIMARY KEY (id)
-);
+-- CREATE TABLE history_values (
+--   history_id INT(10) AUTO_INCREMENT,
+--   history_value INT(15),
+--   home_id INT(10),
+--   PRIMARY KEY (history_id),
+--   FOREIGN KEY (home_id) REFERENCES homes(id)
+-- );
 
 -- CREATE TABLE price_history (
 --   id INT(10) AUTO_INCREMENT,

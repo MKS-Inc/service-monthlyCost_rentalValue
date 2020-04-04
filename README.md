@@ -7,33 +7,32 @@
 # API Documentation
 
 ## get home value summary
-- GET `/homes/:id/homeValueSummary`
+- GET `/homes/:id`
 - Url Params: `id = [integer]`
 - Response
   - Status : `200 OK`
   - Content example:
   ```
   {
-    'addressSummary': {
+    'homeSummary': {
       id: 1,
-      address: '565 Herzog Extension Kling Crescent, Schummborough, New Jersey, 11400-0653',
-      zipcode: 11400,
-      on_market: 'false',
+      address: '565 Herzog Extension Kling Crescent, Schummborough, New Jersey',
+      zipCode: 11400,
+      onMarket: false,
       sqft: 5090,
-      bed: 0,
-      bath: 10,
-      currentestimatedvalue: 1434446,
-      pictureurl: 'https://abodeproject.s3.us-east-2.amazonaws.com/address1.jpg'
+      bedCount: 0,
+      bathCount: 10,
+      listingValue: 1434446,
+      pictureUrl: 'https://abodeproject.s3.us-east-2.amazonaws.com/address1.jpg'
     },
-    'addressValues': [value1, value2, value3...],
-    'similarAddresses': [addresse1, addresse2, addresse3...]
+    'similarhomes': [home1, home2, home3...]
   }
   ```
 - Sample Call:
   `axios.get('/homes/1/homeValueSummary');`
 
 ## Add new home value summary
-- POST `/homes/:id/newValue`
+- POST `/homes/:id`
 - Url Params: `id = [integer]`
 - Data Params: homeValueSummary object
 - Response

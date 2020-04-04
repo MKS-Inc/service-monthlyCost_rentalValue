@@ -14,15 +14,17 @@ app.use(bodyParser({ extended: true }));
 
 app.use(express.static(path.resolve(__dirname, '../public/')));
 
-app.get('/exampleHomeSummary/', (req, res) => {
+app.get('/homes/:id', (req, res) => {
   // const { address, zipCode } = req.query;
   // console.log('The query address is:', address);
   // console.log('The query zipcode is:', zipCode);
+  var startTime = new Date().getTime();
   model.getExampleAddressesData(req.query, (error, result) => {
     if (error) {
       res.end();
     } else {
-      console.log(result);
+      var endTime = new Date().getTime();
+      console.log("Took: " + (endTime - startTime) + "ms");
       res.send(result);
     }
   });
