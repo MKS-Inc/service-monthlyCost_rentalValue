@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/homeValue');
+// mongoose.connect('mongodb://localhost/homevalues');
 
-let homeValueSchema = mongoose.Schema({
-  id: Number,
+let homeValueSchema = new mongoose.Schema({
+  id: {type: Number, unique: true},
   address: String,
   zipCode: Number,
   onMarket: Boolean,
@@ -10,7 +10,12 @@ let homeValueSchema = mongoose.Schema({
   bedCount: Number,
   bathCount: Number,
   listingValue: Number,
-  pictureUrl: String
+  pictureUrl: String,
+  agentName: String,
+  agentEmail: String
 });
 
-let HomeValue = mongoose.model('HomeValue', homeValueSchema);
+
+let Home = mongoose.model('Home', homeValueSchema);
+
+module.exports = Home;
