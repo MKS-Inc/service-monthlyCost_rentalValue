@@ -27,7 +27,7 @@ const generateHomesData = (count) => {
     const agentEmail = faker.internet.email();
     
     let home = {
-      id: i + count * 1000,
+      id: i + (count - 1) * 1000,
       address: address,
       zipCode: zipCode,
       onMarket: onMarket,
@@ -68,4 +68,7 @@ let seedHomes = () => {
 console.time('mongo seedHomes');
 seedHomes();
 // console.log(save(photos), 'run seed was invoked');
+
+
+
 

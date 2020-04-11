@@ -33,8 +33,8 @@ class HomeValueApp extends React.Component {
       type: 'get',
       url: '/exampleHomeSummary/',
       data: {
-        address: 'initial query',
-        zipCode: 12345,
+        // address: 'initial query',
+        zipCode: Math.floor(Math.random() * (99999 - 00001)) + 00001,
       },
       success: (result) => this.setState({
         addressSummary: result.addressSummary,

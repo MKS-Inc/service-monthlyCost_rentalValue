@@ -1,6 +1,8 @@
--- DROP DATABASE IF EXISTS homevalues;
+DROP DATABASE IF EXISTS homevalues;
 
--- CREATE DATABASE homevalues;
+CREATE DATABASE homevalues;
+
+\c homevalues;
 
 CREATE TABLE agents (
   id SERIAL PRIMARY KEY,
@@ -22,7 +24,7 @@ CREATE TABLE homes (
   FOREIGN KEY (agent_id) REFERENCES agents(id)
 );
 
-CREATE INDEX idx_zipCode ON homes (zipCode);
+-- run this line to add index after seeding: CREATE INDEX idx_zipCode ON homes (zipCode);
 
 COPY agents (agentName, agentEmail) 
 FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents1.csv' DELIMITER',' CSV HEADER;
