@@ -7,6 +7,7 @@ import styles from '../style/HomeValueApp.css';
 import downArrowIcon from '../../public/icons/down-arrow.svg';
 import houseIcon from '../../public/icons/iconfinder_House_4265801.svg';
 import marketIcon from '../../public/icons/iconfinder_m-21_4230540.svg';
+const faker = require('faker');
 
 class HomeValueApp extends React.Component {
   constructor(props) {
@@ -29,13 +30,14 @@ class HomeValueApp extends React.Component {
   }
 
   componentDidMount() {
+    let zipcode = faker.address.zipCode().slice(0, 5); 
     $.ajax({
       type: 'get',
-      url: '/exampleHomeSummary/',
-      data: {
+      url: `/homes/${zipcode}`,
+      // data: {
         // address: 'initial query',
-        zipCode: Math.floor(Math.random() * (99999 - 00001)) + 00001,
-      },
+        // zipCode: Math.floor(Math.random() * (99999 - 00001)) + 00001,
+      // },
       success: (result) => this.setState({
         addressSummary: result.addressSummary,
         addressValues: result.addressValues,

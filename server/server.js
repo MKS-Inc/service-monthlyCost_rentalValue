@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -15,18 +16,18 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(path.resolve(__dirname, '../public/')));
 
-app.get('/exampleHomeSummary/', (req, res) => {
-  const { address, zipCode } = req.query;
+app.get('/homes/:zipcode', (req, res) => {
+  const { address, zipcode } = req.params;
   // console.log('The query address is:', address);
-  console.log('The query zipcode is:', zipCode);
+  console.log('The query zipcode is:', zipcode);
   var startTime = new Date().getTime();
-  model.getExampleAddressesData(req.query, (error, homes) => {
+  model.getExampleAddressesData(req.params, (error, homes) => {
     if (error) {
       res.end();
     } else {
       var endTime = new Date().getTime();
       console.log("Took: " + (endTime - startTime) + "ms");
-      console.log(homes[0]);
+      // console.log(homes[0]);
 
       homes.map((home) => {
         home.on_market = home.onmarket ? 'true' : 'false';

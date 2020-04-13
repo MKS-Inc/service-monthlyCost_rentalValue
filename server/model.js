@@ -3,8 +3,7 @@ const db = require('./db');
 
 module.exports = {
   getExampleAddressesData: (query, callback) => {
-    db.any('SELECT * FROM homes WHERE zipcode = $1 limit 10' , query.zipCode)
-    
+    db.any('SELECT * FROM homes WHERE zipcode = $1 limit 10' , query.zipcode)
     .then(function(homes) {
       
       callback(null, homes);

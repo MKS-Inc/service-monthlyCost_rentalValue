@@ -9,3 +9,7 @@ bundledIndex.js
 # fake data
 fakeData/
 dbconfig.js
+
+#newrelic config
+newrelic.js
+newrelic_agent.log
