@@ -10,7 +10,7 @@ const generateHomesData = () => {
   let homes = [];
   let numberOfHomes = 1000000;
   
-  const s3URL = 'https://abodeproject.s3.us-east-2.amazonaws.com/address';
+  const s3URL = 'https://mks-homes.s3-us-west-1.amazonaws.com/img';
 
   for (var i = 1; i <= numberOfHomes; i++) {
     let streetAddress = faker.address.streetAddress();

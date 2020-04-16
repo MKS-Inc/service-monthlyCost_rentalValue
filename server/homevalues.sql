@@ -27,51 +27,51 @@ CREATE TABLE homes (
 -- run this line to add index after seeding: CREATE INDEX idx_zipCode ON homes (zipCode);
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents1.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents1.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes1.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes1.csv' DELIMITER',' CSV HEADER;
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents2.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents2.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes2.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes2.csv' DELIMITER',' CSV HEADER;
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents3.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents3.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes3.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes3.csv' DELIMITER',' CSV HEADER;
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents4.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents4.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes4.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes4.csv' DELIMITER',' CSV HEADER;
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents5.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents5.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes5.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes5.csv' DELIMITER',' CSV HEADER;
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents6.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents6.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes6.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes6.csv' DELIMITER',' CSV HEADER;
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents7.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents7.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes7.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes7.csv' DELIMITER',' CSV HEADER;
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents8.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents8.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes8.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes8.csv' DELIMITER',' CSV HEADER;
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents9.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents9.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes9.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes9.csv' DELIMITER',' CSV HEADER;
 
 COPY agents (agentName, agentEmail) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/agents10.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/agents10.csv' DELIMITER',' CSV HEADER;
 COPY homes (address, zipCode, onMarket, sqft, bedCount, bathCount, currentValue, pictureUrl, agent_id) 
-FROM '/Users/siyun/hrsf126/hrsf126-system-design-capstone/abode-homevalue-pricetax/fakeData/postgres/homes10.csv' DELIMITER',' CSV HEADER;
+FROM '/local/testData/homes10.csv' DELIMITER',' CSV HEADER;

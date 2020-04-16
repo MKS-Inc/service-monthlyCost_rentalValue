@@ -13,3 +13,8 @@ dbconfig.js
 #newrelic config
 newrelic.js
 newrelic_agent.log
+
+#ec2 config
+postgres-mks.pem
+myhomevaluekey.pem
+loaderio-04586aabaa88a8895bd21c4c8bbeb999.txt
